@@ -1,0 +1,252 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#units-table-container {
+  margin-bottom: 1.5rem;
+}
+#units-table-container h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Layout geral da tabela */
+#units-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Cabeçalho */
+#units-table thead th {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid #ccc;
+  background: #fff;
+  color: #222;
+}
+
+/* Linhas do corpo */
+#units-table tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  text-align: left;
+}
+
+/* Zebra-striping: linhas pares levemente azuis */
+#units-table tbody tr:nth-child(even) {
+  background-color: #f0f8ff;
+}
+#units-table tbody tr:hover {
+  background-color: #e0f0ff;
+}
+
+/* Remover bordas verticais */
+#units-table th,
+#units-table td {
+  border-left: none;
+  border-right: none;
+  text-align: left;
+}
+#units-title{
+  text-align: left;
+}
+
+/* Container dos cards */
+.cards-container {
+  display: flex;
+  gap: 1rem;               /* espaço entre cards */
+  margin: 1.5rem 0;        /* margem acima/abaixo */
+}
+
+/* Estilo base do card */
+.card {
+  flex: 1;                 /* cards iguais de largura */
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;   /* cantos arredondados */
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Título do card */
+.card__title {
+  font-size: 0.875rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+/* Valor em destaque */
+.card__value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2b6cb0;
+}
+
+/* Estilo do input de filtro */
+#unit-code-input {
+  display: block;
+  width: 300px;           /* um pouco maior */
+  height: 2.5rem;         /* aumenta a altura */
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem; /* espaço à esquerda para o ícone */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  /* lupa como background, usando SVG na pasta public/ */
+  background-image: url('https://cdn.jsdelivr.net/npm/heroicons@1.0.1/solid/search.svg');
+  background-repeat: no-repeat;
+  background-position: 0.75rem center;
+  background-size: 1rem 1rem;
+}
+#unit-code-input:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.3);
+}
+
+#main-container > h2 {
+  text-align: left;
+  color: #003366;       /* azul escuro */
+  margin-bottom: 1rem;  /* já existia, mas reforça o espaçamento */
+}
+
+.cards-container .card .total-gastos,
+.cards-container .card .qtd-orgaos,
+.cards-container .card .licitacoes {
+  font-weight: 700;
+}
+
+/* Valores dos cards com fonte maior e tom de azul mais claro */
+.cards-container .card .total-valor,
+.cards-container .card .qtd-orgaos-valor,
+.cards-container .card .licitacoes-valor {
+  font-size: 1.75rem;       /* aumenta o tamanho da fonte */
+  color: #336699;           /* azul claro, mais claro que #003366 */
+  font-weight: 700;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* mantém todo o container centralizado */
+}
+#main-container #units-table-container {
+  align-self: flex-start; /* desloca só a tabela de Unidades para a esquerda */
+  text-align: left;       /* alinha o texto para a esquerda */
+}
+
+#main-container h2,
+#main-container #unit-code-input {
+  align-self: flex-start;   /* joga os dois para a esquerda */
+  text-align: left;
+}
+
+/* 2) Cards ocupando 100% de largura e com espaçamento igual */
+.cards-container {
+  width: 100%;
+  justify-content: space-evenly; /* espaços iguais antes, entre e depois */
+}
+
+/* (Opcional) Se quiser garantir que cada card tenha igual largura: */
+.cards-container .card {
+  flex: 1 1 0;   /* todos crescem igualmente */
+  max-width: 30%; /* evita que fiquem gigantes em telas largas */
+}
